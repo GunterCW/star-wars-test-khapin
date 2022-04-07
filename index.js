@@ -38,6 +38,5 @@ form.addEventListener("submit", async (event) => {
   document.querySelector(".mass").textContent = userData.mass;
   document.querySelector(".lds-dual-ring").style.display = "none";
   document.querySelector(".card").style.color = "black";
-  console.log(userData);
   document.querySelector(".color-eyes").style.background = userData.eye_color;
 });
