@@ -8,6 +8,7 @@ const sendRequest = async (url, id = "") => {
     const response = await fetch(url + `${id}`);
     const data = await response.json();
     error.textContent = "";
+
     return data;
   } catch (errorBlock) {
     error.textContent = "Что то пошло не так";
@@ -16,12 +17,17 @@ const sendRequest = async (url, id = "") => {
     document.querySelector(".gender").textContent = "N/D";
     document.querySelector(".height").textContent = "N/D";
     document.querySelector(".mass").textContent = "N/D";
-    document.querySelector(".color-eyes").style.background = "blue";
+    document.querySelector(".color-eyes").style.background = "transparent";
+    document.querySelector(".lds-dual-ring").style.display = "none";
+    document.querySelector(".card").style.color = "black";
   }
 };
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  document.querySelector(".card").style.color = "transparent";
+  document.querySelector(".color-eyes").style.background = "white";
+  document.querySelector(".lds-dual-ring").style.display = "inline-block";
   const userData = await sendRequest(requestURL, input.value);
   const planetData = await sendRequest(userData.homeworld);
   input.value = "";
@@ -30,5 +36,8 @@ form.addEventListener("submit", async (event) => {
   document.querySelector(".gender").textContent = userData.gender;
   document.querySelector(".height").textContent = userData.height;
   document.querySelector(".mass").textContent = userData.mass;
+  document.querySelector(".lds-dual-ring").style.display = "none";
+  document.querySelector(".card").style.color = "black";
+  console.log(userData);
   document.querySelector(".color-eyes").style.background = userData.eye_color;
 });

@@ -42,7 +42,6 @@ a {
 .color-eyes {
   width: 20px;
   height: 20px;
-  background-color: blue;
 }
 .header-item {
   background: #0f0f03;
@@ -197,4 +196,32 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.lds-dual-ring {
+  display: none;
+  width: 80px;
+  height: 80px;
+  color: #ffe81f;
+  position: absolute;
+  left: 30%;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #ffe81f;
+  border-color: #ffe81f transparent #ffe81f transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
