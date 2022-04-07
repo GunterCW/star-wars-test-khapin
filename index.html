@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Test-khapin</title>
+  </head>
+  <body>
+    <header class="header-item">
+      <div class="container">
+        <div class="header-container">
+          <img
+            class="header-item__img"
+            src="./components/img/STAR WARS.svg"
+            alt="Star Wars"
+          />
+          <a class="header-item__text" href="https://swapi.dev/"
+            >API документация</a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="main-item">
+      <div class="container">
+        <form class="main-form">
+          <div class="main-form-container">
+            <input
+              type="number"
+              class="main-form__input"
+              placeholder="Введите число"
+            />
+            <button type="submit" class="main-form__button">Поиск</button>
+          </div>
+          <p class="error-text"></p>
+        </form>
+        <div class="card">
+          <div class="card__title"><p>Имя</p></div>
+          <div class="card__content">
+            <div class="card__content-column">
+              <p>Пол</p>
+              <p>Рост</p>
+              <p>Вес</p>
+              <p>Родная планета</p>
+              <p>Цвет глаз</p>
+            </div>
+            <div class="card__content-column">
+              <p class="gender">N/D</p>
+              <p class="height">N/D</p>
+              <p class="mass">N/D</p>
+              <p class="homeworld">N/D</p>
+              <p class="color-eyes"></p>
+            </div>
+            <img
+              src="/components/img/card-img.png"
+              alt="Дарт Вейдер держит окно с информацией"
+              class="card__img"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-item">
+          <div class="footer-content">
+            <img
+              src="./components/img/github.svg"
+              alt="Логотип Гитхаба"
+              class="footer-item__img"
+            />
+            <a href="https://github.com/GunterCW" class="footer-item__link">
+              GitHub</a
+            >
+          </div>
+          <div class="footer-content__text">© Илон Маск</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="./index.js"></script>
+</html>
