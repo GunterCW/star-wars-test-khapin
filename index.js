@@ -28,6 +28,12 @@ form.addEventListener("submit", async (event) => {
   document.querySelector(".card").style.color = "transparent";
   document.querySelector(".color-eyes").style.background = "white";
   document.querySelector(".lds-dual-ring").style.display = "inline-block";
+  if (input.value === "") {
+    error.textContent = "Вы не ввели число!";
+    document.querySelector(".lds-dual-ring").style.display = "none";
+    document.querySelector(".card").style.color = "black";
+    return;
+  }
   const userData = await sendRequest(requestURL, input.value);
   const planetData = await sendRequest(userData.homeworld);
   input.value = "";
